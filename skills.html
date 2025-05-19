@@ -8,195 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .hero-bg {
-            background: linear-gradient(120deg, #f3eae5 0%, #ffe9b3 100%);
-            padding: 4rem 0 2rem 0;
-            text-align: center;
-            position: relative;
-        }
-        .hero-bg h1 {
-            font-size: 3rem;
-            font-family: 'Kreon', serif;
-            color: #22223b;
-            margin-bottom: 1rem;
-        }
-        .hero-bg p {
-            font-size: 1.3rem;
-            color: #7F8C8D;
-            margin-bottom: 0;
-        }
-        .skills-modern-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2.5rem;
-            margin: 3rem 0 2rem 0;
-        }
-        .modern-skill-card {
-            background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 4px 24px rgba(44,62,80,0.08);
-            padding: 2.2rem 2rem 1.7rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            transition: box-shadow 0.2s, transform 0.2s;
-            position: relative;
-            overflow: hidden;
-        }
-        .modern-skill-card:hover {
-            box-shadow: 0 12px 32px rgba(228, 148, 113, 0.18);
-            transform: translateY(-6px) scale(1.03);
-        }
-        .modern-skill-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #E49471;
-            background: #fffbe6;
-            border-radius: 50%;
-            padding: 0.7rem 1.1rem;
-            box-shadow: 0 2px 8px rgba(228, 148, 113, 0.10);
-        }
-        .modern-skill-card h3 {
-            font-size: 1.25rem;
-            font-family: 'Kreon', serif;
-            font-weight: 700;
-            margin-bottom: 0.7rem;
-        }
-        .modern-progress {
-            width: 100%;
-            height: 8px;
-            background: #ffe9b3;
-            border-radius: 4px;
-            margin-bottom: 0.7rem;
-            overflow: hidden;
-        }
-        .modern-progress-bar {
-            height: 100%;
-            border-radius: 4px;
-            background: linear-gradient(90deg, #E49471 60%, #FFD166 100%);
-            transition: width 0.4s;
-        }
-        .modern-skill-level {
-            font-size: 0.98rem;
-            color: #b8860b;
-            font-weight: 600;
-        }
-        .section-divider {
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #ffe9b3 0%, #E49471 100%);
-            border-radius: 2px;
-            margin: 3rem 0 2rem 0;
-        }
-        .badges-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 2rem auto 2.5rem auto;
-            justify-content: center;
-            max-width: 1200px;
-        }
-        .badge {
-            
-            color: #ed9073;
-            font-weight: 600;
-            border-radius: 20px;
-            padding: 0.6rem 1.4rem;
-            font-size: 1.05rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 1px 4px rgba(228, 148, 113, 0.08);
-            border: 1px solid #E49471;
-        }
-        .timeline {
-            position: relative;
-            margin: 3rem auto 2rem auto;
-            padding-left: 2.5rem;
-            max-width: 800px;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 18px;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg, #E49471 0%, #FFD166 100%);
-            border-radius: 2px;
-        }
-        .timeline-entry {
-            position: relative;
-            margin-bottom: 2.5rem;
-            padding-left: 2.5rem;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: -2.5rem;
-            top: 0.2rem;
-            width: 24px;
-            height: 24px;
-            background: #fff;
-            border: 4px solid #E49471;
-            border-radius: 50%;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: #E49471;
-        }
-        .timeline-entry h4 {
-            font-size: 1.15rem;
-            font-family: 'Kreon', serif;
-            margin-bottom: 0.2rem;
-            color: #22223b;
-        }
-        .timeline-entry h5 {
-            font-size: 1rem;
-            color: #b8860b;
-            margin-bottom: 0.2rem;
-        }
-        .timeline-entry .timeline-date {
-            font-size: 0.95rem;
-            color: #7F8C8D;
-            margin-bottom: 0.5rem;
-        }
-        .timeline-entry ul {
-            margin: 0 0 0 1.2rem;
-            padding: 0;
-            color: #7a5c00;
-            font-size: 1.02rem;
-            line-height: 1.7;
-        }
-        .highlight-card {
-            background: linear-gradient(135deg, #fffbe6 0%, #ffe9b3 100%);
-            border-left: 8px solid #FFD166;
-            border-radius: 18px;
-            box-shadow: 0 8px 32px rgba(228, 148, 113, 0.13);
-            padding: 2.2rem 2rem 1.7rem 2rem;
-            margin: 2rem auto;
-            max-width: 800px;
-        }
-        @media (max-width: 700px) {
-            .skills-modern-grid { grid-template-columns: 1fr; }
-            .timeline { padding-left: 1.2rem; }
-            .timeline-entry { padding-left: 1.2rem; }
-            .timeline-dot { left: -1.5rem; }
-        }
-        .experience-container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        @media (max-width: 700px) {
-            .experience-container {
-                width: 98%;
-                padding: 0 1vw;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header>
@@ -339,6 +151,16 @@
                     <div class="timeline-entry">
                         <span class="timeline-dot">🎓</span>
                         <h4>Bachelor of Information Technology</h4>
+                        <h5>Federation University</h5>
+                        <div class="timeline-date">2024 - Present</div>
+                        <ul>
+                            <li>Currently pursuing advanced coursework in IT and software development</li>
+                            <li>Focusing on cloud computing, cybersecurity, and project management</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-entry">
+                        <span class="timeline-dot">🎓</span>
+                        <h4>Bachelor of Information Technology</h4>
                         <h5>Melbourne Institute of Technology</h5>
                         <div class="timeline-date">2020 - 2023</div>
                         <ul>
@@ -411,8 +233,8 @@
             <div class="footer-col">
                 <h3>Social Links</h3>
                 <ul>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fab fa-github"></i></a></li>
                 </ul>
             </div>
         </div>

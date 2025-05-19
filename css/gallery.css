@@ -243,33 +243,6 @@
     transform: rotate(90deg);
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-item {
-        height: 280px;
-    }
-
-    .gallery-filter {
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .lightbox-content {
-        max-width: 95%;
-    }
-
-    .close-lightbox {
-        top: 1rem;
-        right: 1rem;
-    }
-}
-
 .site-footer, footer {
     background: #111 !important;
     color: #e5e5e5;
