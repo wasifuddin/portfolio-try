@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Mushfiqur Rahman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hero-bg {
+            background: linear-gradient(120deg, #f3eae5 0%, #ffe9b3 100%);
+            padding: 4rem 0 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+        .hero-bg h1 {
+            font-size: 3rem;
+            font-family: 'Kreon', serif;
+            color: #22223b;
+            margin-bottom: 1rem;
+        }
+        .hero-bg p {
+            font-size: 1.3rem;
+            color: #7F8C8D;
+            margin-bottom: 0;
+        }
+        .skills-modern-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0 2rem 0;
+        }
+        .modern-skill-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+            padding: 2.2rem 2rem 1.7rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: box-shadow 0.2s, transform 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .modern-skill-card:hover {
+            box-shadow: 0 12px 32px rgba(228, 148, 113, 0.18);
+            transform: translateY(-6px) scale(1.03);
+        }
+        .modern-skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #E49471;
+            background: #fffbe6;
+            border-radius: 50%;
+            padding: 0.7rem 1.1rem;
+            box-shadow: 0 2px 8px rgba(228, 148, 113, 0.10);
+        }
+        .modern-skill-card h3 {
+            font-size: 1.25rem;
+            font-family: 'Kreon', serif;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+        }
+        .modern-progress {
+            width: 100%;
+            height: 8px;
+            background: #ffe9b3;
+            border-radius: 4px;
+            margin-bottom: 0.7rem;
+            overflow: hidden;
+        }
+        .modern-progress-bar {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #E49471 60%, #FFD166 100%);
+            transition: width 0.4s;
+        }
+        .modern-skill-level {
+            font-size: 0.98rem;
+            color: #b8860b;
+            font-weight: 600;
+        }
+        .section-divider {
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #ffe9b3 0%, #E49471 100%);
+            border-radius: 2px;
+            margin: 3rem 0 2rem 0;
+        }
+        .badges-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem auto 2.5rem auto;
+            justify-content: center;
+            max-width: 1200px;
+        }
+        .badge {
+            
+            color: #ed9073;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 0.6rem 1.4rem;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 1px 4px rgba(228, 148, 113, 0.08);
+            border: 1px solid #E49471;
+        }
+        .timeline {
+            position: relative;
+            margin: 3rem auto 2rem auto;
+            padding-left: 2.5rem;
+            max-width: 800px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #E49471 0%, #FFD166 100%);
+            border-radius: 2px;
+        }
+        .timeline-entry {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2.5rem;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -2.5rem;
+            top: 0.2rem;
+            width: 24px;
+            height: 24px;
+            background: #fff;
+            border: 4px solid #E49471;
+            border-radius: 50%;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #E49471;
+        }
+        .timeline-entry h4 {
+            font-size: 1.15rem;
+            font-family: 'Kreon', serif;
+            margin-bottom: 0.2rem;
+            color: #22223b;
+        }
+        .timeline-entry h5 {
+            font-size: 1rem;
+            color: #b8860b;
+            margin-bottom: 0.2rem;
+        }
+        .timeline-entry .timeline-date {
+            font-size: 0.95rem;
+            color: #7F8C8D;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-entry ul {
+            margin: 0 0 0 1.2rem;
+            padding: 0;
+            color: #7a5c00;
+            font-size: 1.02rem;
+            line-height: 1.7;
+        }
+        .highlight-card {
+            background: linear-gradient(135deg, #fffbe6 0%, #ffe9b3 100%);
+            border-left: 8px solid #FFD166;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(228, 148, 113, 0.13);
+            padding: 2.2rem 2rem 1.7rem 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        @media (max-width: 700px) {
+            .skills-modern-grid { grid-template-columns: 1fr; }
+            .timeline { padding-left: 1.2rem; }
+            .timeline-entry { padding-left: 1.2rem; }
+            .timeline-dot { left: -1.5rem; }
+        }
+        .experience-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        @media (max-width: 700px) {
+            .experience-container {
+                width: 98%;
+                padding: 0 1vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="modern-nav">
+            <a href="index.html" class="logo"><img src="images/profile.jpg" alt="Mushfiqur Rahman" class="nav-profile"> Mushfiqur Rahman</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="skills.html" class="active">Experience</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Projects</a>
+                    <ul class="dropdown-content">
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                    </ul>
+                </li>
+                <li><a href="internship.html">Internship</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="experience-container">
+            <section class="hero-bg">
+                <h1>Experience</h1>
+                <p>Modern IT Professional & Web Developer with a passion for digital solutions, growth, and impact.</p>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section>
+                <h2 class="section-title centered">Technical Skills</h2>
+                <div class="skills-modern-grid">
+                    <div class="modern-skill-card">
+                        <span class="modern-skill-icon">🛒</span>
+                        <h3>Shopify Development</h3>
+                        <div class="modern-progress"><div class="modern-progress-bar" style="width: 85%"></div></div>
+                        <span class="modern-skill-level">Practitioner</span>
+                    </div>
+                    <div class="modern-skill-card">
+                        <span class="modern-skill-icon">🖥️</span>
+                        <h3>IT System Management</h3>
+                        <div class="modern-progress"><div class="modern-progress-bar" style="width: 75%"></div></div>
+                        <span class="modern-skill-level">Practitioner</span>
+                    </div>
+                    <div class="modern-skill-card">
+                        <span class="modern-skill-icon">🤖</span>
+                        <h3>Taskade AI & Trello</h3>
+                        <div class="modern-progress"><div class="modern-progress-bar" style="width: 90%"></div></div>
+                        <span class="modern-skill-level">Expert</span>
+                    </div>
+                    <div class="modern-skill-card">
+                        <span class="modern-skill-icon">📧</span>
+                        <h3>Google Workspace</h3>
+                        <div class="modern-progress"><div class="modern-progress-bar" style="width: 80%"></div></div>
+                        <span class="modern-skill-level">Practitioner</span>
+                    </div>
+                    <div class="modern-skill-card">
+                        <span class="modern-skill-icon">📊</span>
+                        <h3>Microsoft Office</h3>
+                        <div class="modern-progress"><div class="modern-progress-bar" style="width: 85%"></div></div>
+                        <span class="modern-skill-level">Practitioner</span>
+                    </div>
+                    <div class="modern-skill-card">
+                        <span class="modern-skill-icon">📈</span>
+                        <h3>Digital Marketing</h3>
+                        <div class="modern-progress"><div class="modern-progress-bar" style="width: 75%"></div></div>
+                        <span class="modern-skill-level">Practitioner</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section>
+                <h2 class="section-title centered">Soft Skills & Languages</h2>
+                <div class="badges-row">
+                    <span class="badge">💬 Communication</span>
+                    <span class="badge">🤝 Customer Service</span>
+                    <span class="badge">🧩 Problem-Solving</span>
+                    <span class="badge">👥 Team Collaboration</span>
+                    <span class="badge">🧠 Strategic Thinking</span>
+                    <span class="badge">🇧🇩 Bengali: Native</span>
+                    <span class="badge">🇬🇧 English: Fluent (PTE 83)</span>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section>
+                <h2 class="section-title centered">Professional Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-entry">
+                        <span class="timeline-dot">💼</span>
+                        <h4>IT Support Specialist</h4>
+                        <h5>TechSolutions Melbourne</h5>
+                        <div class="timeline-date">March 2023 - Present</div>
+                        <ul>
+                            <li>Managed and troubleshooted enterprise-level IT infrastructure for 50+ clients</li>
+                            <li>Implemented cloud-based solutions resulting in 30% improved efficiency</li>
+                            <li>Developed automated ticket resolution systems using PowerShell</li>
+                            <li>Trained junior staff on best practices and emerging technologies</li>
+                            <li>Maintained 98% customer satisfaction rating across all support tickets</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-entry">
+                        <span class="timeline-dot">🛒</span>
+                        <h4>E-commerce Specialist</h4>
+                        <h5>Digital Retail Solutions</h5>
+                        <div class="timeline-date">June 2022 - February 2023</div>
+                        <ul>
+                            <li>Developed and maintained Shopify stores for small businesses</li>
+                            <li>Implemented responsive designs and custom theme modifications</li>
+                            <li>Integrated payment gateways and shipping solutions</li>
+                            <li>Optimized store performance resulting in 25% increase in conversion rates</li>
+                            <li>Created product photography and marketing materials for clients</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-entry">
+                        <span class="timeline-dot">🧑‍💻</span>
+                        <h4>Junior IT Assistant</h4>
+                        <h5>Melbourne Tech Academy</h5>
+                        <div class="timeline-date">February 2021 - May 2022</div>
+                        <ul>
+                            <li>Assisted in maintaining computer labs and classroom technology</li>
+                            <li>Provided front-line technical support to students and faculty</li>
+                            <li>Helped implement Google Workspace across the organization</li>
+                            <li>Created documentation and user guides for common technical issues</li>
+                            <li>Participated in technology upgrade projects and system migrations</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section>
+                <h2 class="section-title centered">Education & Certifications</h2>
+                <div class="timeline">
+                    <div class="timeline-entry">
+                        <span class="timeline-dot">🎓</span>
+                        <h4>Bachelor of Information Technology</h4>
+                        <h5>Melbourne Institute of Technology</h5>
+                        <div class="timeline-date">2020 - 2023</div>
+                        <ul>
+                            <li>Specialized in Systems Administration and Network Security</li>
+                            <li>Achieved Distinction average across all subjects</li>
+                            <li>Capstone Project: Automated Helpdesk Ticketing System (Grade: HD)</li>
+                            <li>Active member of the Student IT Society</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-entry">
+                        <span class="timeline-dot">📜</span>
+                        <h4>Technical Certifications</h4>
+                        <h5>Industry Qualifications</h5>
+                        <div class="timeline-date">2021 - Present</div>
+                        <ul>
+                            <li>CompTIA A+ Certification (2021)</li>
+                            <li>Microsoft Certified: Azure Fundamentals (2022)</li>
+                            <li>Google IT Support Professional Certificate (2022)</li>
+                            <li>Shopify Partner Certification (2023)</li>
+                            <li>Cisco Certified Network Associate (CCNA) - In Progress</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section>
+                <h2 class="section-title centered">Volunteer Experience</h2>
+                <div class="highlight-card">
+                    <h4>IT Mentor</h4>
+                    <h5>Melbourne Digital Inclusion Program</h5>
+                    <div class="timeline-date">2022 - Present</div>
+                    <ul>
+                        <li>Teach basic computer skills to seniors and disadvantaged community members</li>
+                        <li>Develop accessible learning materials for digital literacy</li>
+                        <li>Assist in organizing community technology workshops</li>
+                        <li>Provided over 100 hours of volunteer service</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col footer-about">
+                <h3>Mushfiqur Rahman</h3>
+                <p>Aspiring IT professional and web developer from Melbourne, Australia. I love building modern, user-friendly websites and learning new technologies.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills.html">Experience</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="internship.html">Internship</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>+61 488 648 983</li>
+                    <li><a href="mailto:mushfiqur2004@gmail.com">mushfiqur2004@gmail.com</a></li>
+                    <li>Melbourne, Australia</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Social Links</h3>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; Mushfiqur Rahman 2025. All rights reserved.</div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html> 
