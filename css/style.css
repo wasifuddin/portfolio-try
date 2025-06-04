@@ -503,27 +503,28 @@ h3 { font-size: 1.5rem; }
 .travel-section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 3rem 2rem;
 }
 
 .travel-section h1 {
     font-size: 2.7rem;
+    font-family: 'Kreon', serif;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
     color: var(--text);
-    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .travel-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .travel-card {
-    display: flex;
-    flex-wrap: wrap;
     background: #fff;
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -531,12 +532,13 @@ h3 { font-size: 1.5rem; }
 
 .travel-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(228, 148, 113, 0.15);
+    box-shadow: 0 8px 32px rgba(44,62,80,0.12);
 }
 
 .travel-image {
-    flex: 1 1 350px;
-    height: 350px;
+    position: relative;
+    width: 100%;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -552,50 +554,36 @@ h3 { font-size: 1.5rem; }
 }
 
 .travel-content {
-    flex: 1 1 500px;
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .travel-date {
-    display: inline-block;
-    background: #f3eae5;
-    color: var(--accent);
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
+    color: var(--text-light);
     font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 0.8rem;
-}
-
-.travel-content h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-    color: var(--text);
+    margin-bottom: 0.5rem;
 }
 
 .travel-content h3 {
-    font-size: 1.3rem;
-    margin: 1.5rem 0 1rem;
+    font-size: 1.4rem;
+    margin: 0 0 1rem 0;
     color: var(--text);
 }
 
-.travel-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+.travel-description {
     color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.6;
     margin-bottom: 1rem;
 }
 
-.travel-content ul {
-    padding-left: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.travel-content li {
-    margin-bottom: 0.7rem;
-    font-size: 1.05rem;
+.section-intro {
+    text-align: center;
     color: var(--text-light);
-    line-height: 1.5;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .travel-takeaway {
@@ -1188,11 +1176,13 @@ h3 { font-size: 1.5rem; }
 
 .section-title.centered {
     display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     border-bottom: none;
     position: relative;
     padding-bottom: 1rem;
 }
-
 .section-title.centered:after {
     content: '';
     position: absolute;
@@ -1204,7 +1194,6 @@ h3 { font-size: 1.5rem; }
     background: var(--accent);
     border-radius: 2px;
 }
-
 .section-intro.centered {
     text-align: center;
     max-width: 700px;
@@ -1908,5 +1897,40 @@ select:focus {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.future-destinations-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+.future-card {
+    background: linear-gradient(135deg, #f3eae5 0%, #f8e1d7 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(228, 148, 113, 0.10);
+    padding: 2rem 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    min-width: 260px;
+    max-width: 320px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.future-card:hover {
+    box-shadow: 0 8px 32px rgba(228, 148, 113, 0.18);
+    transform: translateY(-5px) scale(1.03);
+}
+.future-icon {
+    font-size: 2.2rem;
+    color: var(--accent);
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(228, 148, 113, 0.10);
+    padding: 0.7rem 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
